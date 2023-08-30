@@ -1,0 +1,38 @@
+{% extends "products/base.html" %}
+
+{% block content %}
+  <h2>Products Awaiting Approval</h2>
+
+  {% if pending_products %}
+    <table class="table table-bordered border-secondary table-nowrap">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Create Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in pending_products %}
+          <tr>
+              <td><a href="{% url 'admin_product_detail' product.product_uuid %}">{{ product.product_name }}</a></td>
+            <td>{{ product.product_description }}</td>
+            <td><img src="{{ product.image.url }}" alt="{{ product.title }}" height="30"></td>
+            <td>{{ product.create_date }}</td>
+            <td>
+              <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <button type="submit">Approve</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No products awaiting approval.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "products/base.html" %}
+{% block head_title %}Products{% endblock %}
+
+{% block content %}
+  <h2>All Products</h2>
+  {% if request.user.profile.user_type == 'vendor' %}
+    <div class="mb-3">
+        <a href="/product/upload/" type="button" class="btn btn-secondary waves-effect"> Upload New Product</a>
+    </div>
+  {% endif %}
+  <table class="table table-bordered border-secondary table-nowrap">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Status</th>
+        <th>Create Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in all_products %}
+        <tr>
+          <td>
+              {% if request.user.profile.user_type == 'admin' %}
+              <a href="{% url 'admin_product_detail' product.product_uuid %}">{{ product.product_name }}</a>
+              {% else %}
+              {% if request.user.profile.user_type == 'vendor' %}
+              <a href="{% url 'vendor_product_detail' request.user.username product.product_uuid %}">{{ product.product_name }}</a>
+              {% endif %}{% endif %}
+          </td>
+          <td>{{ product.product_description }}</td>
+          <td><img src="{{ product.image.url }}" alt="{{ product.title }}" height="30"></td>
+          <td>{{ product.status|title }}</td>
+          <td>{{ product.create_date }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

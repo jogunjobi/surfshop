@@ -1,0 +1,17 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}Vendor Registration{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block form_content %}
+  <h4>Vendor Registration</h4>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+      <br/>
+    <button type="submit">Register</button>
+  </form>
+  <div class="mt-4 text-center">
+        <p class="mb-0">Already have an account ? <a href="/login" class="fw-semibold text-primary text-decoration-underline"> Log In </a> </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "products/base.html" %}
+{% block head_title %}{{ product.product_name }}{% endblock %}
+
+{% block content %}
+  <h2>{{ product.product_name }}</h2>
+    <p><strong>Product Description:</strong> {{ product.product_description }}</p>
+    <p><strong>Status:</strong> {{ product.status|title }}</p>
+    <p><strong>Vendor:</strong> {{ product.vendor.user.username|title }}</p>
+  <img src="{{ product.image.url }}" alt="{{ product.title }}" width="300">
+  <br/>
+  {% if request.user.profile.user_type == 'admin' and product.status == 'pending' %}
+    <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="product_id" value="{{ product.product_uuid }}">
+      <button type="submit">Approve</button>
+    </form>
+  {% endif %}
+{% endblock %}

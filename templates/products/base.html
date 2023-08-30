@@ -1,0 +1,169 @@
+{% load static %}
+{% load humanize %}
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar="dark" data-sidebar="dark" data-sidebar-size="lg">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>{% block head_title %}{% endblock %} | Bill's Surf Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Bill's Surf Shop" name="description" />
+        <meta content="Bill's Surf Shop" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- Layout config Js -->
+        <script src="{% static 'web2/assets/js/layout.js' %}"></script>
+        <!-- Bootstrap Css -->
+        <link href="{% static 'web2/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'web2/assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'web2/assets/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- custom Css-->
+        <link href="{% static 'web2/assets/css/custom.min.css' %}" rel="stylesheet" type="text/css" />
+        {% block header %}{% endblock %}
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar">
+                <div class="layout-width">
+                    <div class="navbar-header">
+                        <div class="d-flex">
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+            <!-- ========== App Menu ========== -->
+            <div class="app-menu navbar-menu">
+
+                <div id="scrollbar">
+                    <div class="container-fluid">
+
+                        <div id="two-column-menu">
+                        </div>
+
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                            {% if request.user.profile.user_type == 'admin' %}
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/products/">
+                                    <span data-key="t-requests">All Products</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/products/approval/">
+                                    <span data-key="t-requests">Pending Approvals</span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+                            {% if request.user.profile.user_type == 'vendor' %}
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/products/">
+                                    <span data-key="t-requests">My Products</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="/logout/">
+                                    <span data-key="t-requests">Logout</span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        {% block content %}
+                        {% endblock %}
+
+                    </div>
+                    <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                2023 © Bill's Surf Shop
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+        <!--end back-to-top-->
+
+
+        <!-- JAVASCRIPT -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="{% static 'web2/assets/libs/bootstrap.modal.forms/jquery.bootstrap.modal.forms.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/simplebar/simplebar.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/node-waves/waves.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/feather-icons/feather.min.js' %}"></script>
+        <script src="{% static 'web2/assets/js/pages/plugins/lord-icon-2.1.0.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/choices.js/public/assets/scripts/choices.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/flatpickr/flatpickr.min.js' %}"></script>
+        <script src="{% static 'web2/assets/js/plugins.js' %}"></script>
+{#        <script src="{% static 'web2/assets/js/pages/modal.init.js' %}"></script>#}
+
+        <!-- App js -->
+        <script src="{% static 'web2/assets/js/app.js' %}"></script>
+
+        <!-- prismjs plugin -->
+        <script src="{% static 'web2/assets/libs/prismjs/prism.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/list.js/list.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/list.pagination.js/list.pagination.min.js' %}"></script>
+        <!-- listjs init -->
+        <script src="{% static 'web2/assets/js/pages/listjs2.init.js' %}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script src="{% static 'web2/assets/libs/leaflet/leaflet.js' %}"></script>
+
+        <script src="{% static 'web2/assets/libs/swiper/swiper-bundle.min.js' %}"></script>
+
+        <script src="{% static 'web2/assets/js/pages/leaflet-us-states.js' %}"></script>
+        <script src="{% static 'web2/assets/js/pages/leaflet-map.init.js' %}"></script>
+{#        <script src="{% static 'web2/assets/js/custom.js' %}"></script>#}
+
+        <!-- Vector map-->
+        <script src="{% static 'web2/assets/libs/jsvectormap/js/jsvectormap.min.js' %}"></script>
+        <script src="{% static 'web2/assets/libs/jsvectormap/maps/world-merc.js' %}"></script>
+        {% block javascript %}{% endblock %}
+    </body>
+
+</html>
