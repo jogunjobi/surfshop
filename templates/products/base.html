@@ -23,6 +23,8 @@
         <link href="{% static 'web2/assets/css/app.min.css' %}" rel="stylesheet" type="text/css" />
         <!-- custom Css-->
         <link href="{% static 'web2/assets/css/custom.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Datatables-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
         {% block header %}{% endblock %}
 
     </head>
@@ -148,21 +150,12 @@
         <script src="{% static 'web2/assets/libs/prismjs/prism.js' %}"></script>
         <script src="{% static 'web2/assets/libs/list.js/list.min.js' %}"></script>
         <script src="{% static 'web2/assets/libs/list.pagination.js/list.pagination.min.js' %}"></script>
-        <!-- listjs init -->
         <script src="{% static 'web2/assets/js/pages/listjs2.init.js' %}"></script>
-
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-        <script src="{% static 'web2/assets/libs/leaflet/leaflet.js' %}"></script>
 
         <script src="{% static 'web2/assets/libs/swiper/swiper-bundle.min.js' %}"></script>
 
-        <script src="{% static 'web2/assets/js/pages/leaflet-us-states.js' %}"></script>
-        <script src="{% static 'web2/assets/js/pages/leaflet-map.init.js' %}"></script>
-{#        <script src="{% static 'web2/assets/js/custom.js' %}"></script>#}
-
-        <!-- Vector map-->
-        <script src="{% static 'web2/assets/libs/jsvectormap/js/jsvectormap.min.js' %}"></script>
-        <script src="{% static 'web2/assets/libs/jsvectormap/maps/world-merc.js' %}"></script>
         {% block javascript %}{% endblock %}
     </body>
 
