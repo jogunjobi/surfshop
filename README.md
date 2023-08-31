@@ -18,8 +18,11 @@ This Django project is designed to manage products for Uncle Bill's surf shop. I
    ```
 
 2. **Install Dependencies**:
+
    If you use pip
    ```
+   python3 -m venv env
+   source env/bin/activate
    pip install -r requirements.txt
    ```
 

@@ -1,0 +1,17 @@
+asgiref==3.7.2
+boto3==1.28.38
+botocore==1.31.38
+crispy-bootstrap4==2022.1
+django==4.2.4
+django-crispy-forms==2.0
+django-storages==1.13.2
+gunicorn==21.2.0
+jmespath==1.0.1
+packaging==23.1
+pillow==10.0.0
+python-dateutil==2.8.2
+python-dotenv==1.0.0
+s3transfer==0.6.2
+six==1.16.0
+sqlparse==0.4.4
+urllib3==1.26.16
