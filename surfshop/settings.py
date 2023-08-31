@@ -33,7 +33,7 @@ if os.getenv("DJANGO_ALLOWED_HOSTS", "") != "":
 else:
     ALLOWED_HOSTS = ["127.0.0.1"]
     DEBUG = True
-    
+
 # Application definition
 
 INSTALLED_APPS = [
