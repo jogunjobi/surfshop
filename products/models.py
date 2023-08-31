@@ -12,6 +12,9 @@ class Profile(models.Model):
     )
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default='vendor')
 
+    def __str__(self):
+        return "{0}".format(self.user)
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -20,6 +23,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
 
 class Product(models.Model):
     PENDING = 'pending'
@@ -35,4 +39,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/')
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=PENDING)
     create_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    def __str__(self):
+        return "{0}".format(self.product_name)
 
