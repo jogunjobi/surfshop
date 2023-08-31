@@ -5,6 +5,7 @@
   <h2>{{ product.product_name }}</h2>
     <p><strong>Product Description:</strong> {{ product.product_description }}</p>
     <p><strong>Status:</strong> {{ product.status|title }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
     <p><strong>Vendor:</strong> {{ product.vendor.user.username|title }}</p>
   <img src="{{ product.image.url }}" alt="{{ product.title }}" width="300">
   <br/>
