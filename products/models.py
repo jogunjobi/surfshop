@@ -36,6 +36,7 @@ class Product(models.Model):
     vendor = models.ForeignKey(Profile, on_delete=models.CASCADE)
     product_name = models.CharField(max_length=200)
     product_description = models.TextField()
+    price = models.IntegerField(default=0)
     image = models.ImageField(upload_to='products/')
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=PENDING)
     create_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)

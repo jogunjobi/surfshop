@@ -1,3 +1,5 @@
+{% load static %}
+{% load humanize %}
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
@@ -6,21 +8,21 @@
     <meta charset="utf-8" />
     <title>{% block title %}{% endblock %} | Bill's Surf Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Tracc Systems - Logistics Management" name="description" />
-    <meta content="Tracc Systems" name="author" />
+    <meta content="Bill's Surf Shop" name="description" />
+    <meta content="Bill's Surf Shop" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- Layout config Js -->
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/js/layout.js"></script>
+    <script src="{% static 'web2/assets/js/layout.js' %}"></script>
     <!-- Bootstrap Css -->
-    <link href="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'web2/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'web2/assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="https://tracc-public-assets.nyc3.digitaloceanspaces.com/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'web2/assets/css/app.min.cs' %}s" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'web2/assets/css/custom.min.css' %}" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -79,15 +81,15 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/libs/node-waves/waves.min.js"></script>
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/libs/feather-icons/feather.min.js"></script>
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/js/plugins.js"></script>
+    <script src="{% static 'web2/assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'web2/assets/libs/simplebar/simplebar.min.js' %}"></script>
+    <script src="{% static 'web2/assets/libs/node-waves/waves.min.js' %}"></script>
+    <script src="{% static 'web2/assets/libs/feather-icons/feather.min.js' %}"></script>
+    <script src="{% static 'web2/assets/js/pages/plugins/lord-icon-2.1.0.js' %}"></script>
+    <script src="{% static 'web2/assets/js/plugins.js' %}"></script>
 
     <!-- password-addon init -->
-    <script src="https://tracc-public-assets.nyc3.cdn.digitaloceanspaces.com/assets/js/pages/password-addon.init.js"></script>
+    <script src="{% static 'web2/assets/js/pages/password-addon.init.js' %}"></script>
 </body>
 
 </html>
